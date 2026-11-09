@@ -21,16 +21,16 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 @media(max-width:760px){header{height:auto;padding:18px 0;align-items:flex-start;gap:16px;flex-direction:column}nav{flex-wrap:wrap;gap:14px}.hero{grid-template-columns:1fr;padding:65px 0;min-height:0}.film-img{height:220px}.head{grid-template-columns:1fr;gap:14px}.about,.contact-grid{grid-template-columns:1fr;gap:26px}.projects{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:5px}section{padding:68px 0}footer{flex-direction:column;gap:7px}}
 @media(max-width:440px){.wrap{width:calc(100% - 32px)}h1{font-size:3.8rem}.skills{grid-template-columns:1fr}}
 
-/* Subtle blue butterflies floating through the portfolio */
+/* Blue butterflies: continuous end-to-end flight with gentle bobbing and wing beats */
 .butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
-.butterfly{position:absolute;display:block;width:34px;height:34px;opacity:.9;filter:drop-shadow(0 2px 5px rgba(25,75,105,.28));will-change:transform}.butterfly svg{width:100%;height:100%;overflow:visible}
-.butterfly.one{left:7%;top:28%;animation:butterfly-drift-one 19s ease-in-out infinite}
-.butterfly.two{right:9%;top:62%;width:29px;height:29px;animation:butterfly-drift-two 23s ease-in-out -7s infinite}
-.butterfly.three{left:48%;top:82%;width:24px;height:24px;opacity:.75;animation:butterfly-drift-three 27s ease-in-out -13s infinite}
-@keyframes butterfly-drift-one{0%,100%{transform:translate(0,0) rotate(-12deg)}25%{transform:translate(42px,-34px) rotate(10deg)}55%{transform:translate(85px,24px) rotate(-8deg)}80%{transform:translate(28px,48px) rotate(12deg)}}
-@keyframes butterfly-drift-two{0%,100%{transform:translate(0,0) rotate(10deg)}30%{transform:translate(-52px,38px) rotate(-14deg)}65%{transform:translate(-92px,-28px) rotate(8deg)}}
-@keyframes butterfly-drift-three{0%,100%{transform:translate(0,0) rotate(0)}35%{transform:translate(65px,-45px) rotate(16deg)}70%{transform:translate(-35px,-75px) rotate(-12deg)}}
-@media(prefers-reduced-motion:reduce){.butterfly{animation:none!important;}}
+.butterfly{position:absolute;left:-58px;display:block;width:42px;height:42px;opacity:.92;filter:drop-shadow(0 2px 5px rgba(12,75,130,.28));will-change:left,top,transform;animation:butterfly-cross 26s linear infinite alternate}
+.butterfly svg{width:100%;height:100%;overflow:visible;transform-origin:50% 50%;animation:wing-flutter .22s ease-in-out infinite alternate}
+.butterfly.one{top:23%;animation-duration:25s}
+.butterfly.two{top:57%;width:34px;height:34px;animation-duration:32s;animation-delay:-13s}
+.butterfly.three{top:78%;width:29px;height:29px;animation-duration:29s;animation-delay:-21s}
+@keyframes butterfly-cross{0%{left:-58px;transform:translateY(0) rotate(-5deg)}18%{transform:translateY(-24px) rotate(4deg)}38%{transform:translateY(15px) rotate(-3deg)}58%{transform:translateY(-19px) rotate(5deg)}78%{transform:translateY(13px) rotate(-4deg)}100%{left:calc(100% + 58px);transform:translateY(-5px) rotate(3deg)}}
+@keyframes wing-flutter{from{transform:scaleX(.62) rotate(-3deg)}to{transform:scaleX(1) rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){.butterfly,.butterfly svg{animation:none!important}}
 </style>
 </head>
 <body>
