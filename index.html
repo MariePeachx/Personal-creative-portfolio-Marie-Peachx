@@ -23,8 +23,10 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 
 /* One vivid blue butterfly, inspired by the reference image */
 .butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
-.butterfly{position:absolute;left:-100px;top:36%;display:block;width:88px;height:88px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:left,transform,opacity;animation:butterfly-cross 22s linear infinite}
+.butterfly{position:absolute;left:0;top:0;display:block;width:88px;height:88px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:transform,opacity}
 .butterfly svg{width:100%;height:100%;overflow:visible}
+.butterfly.is-flying{animation:butterfly-pop var(--flight-time,9s) ease-in-out forwards}
+@keyframes butterfly-pop{0%{opacity:0;transform:translate(0,0) scale(.78) rotate(-9deg)}12%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(var(--flight-x,260px),var(--flight-y,-35px)) scale(1) rotate(8deg)}}
 .butterfly .wing-left{transform-origin:58px 49px;animation:wing-left .22s ease-in-out infinite alternate}
 .butterfly .wing-right{transform-origin:62px 49px;animation:wing-right .22s ease-in-out infinite alternate}
 @keyframes wing-left{from{transform:scaleX(.72) rotate(-5deg)}to{transform:scaleX(1) rotate(3deg)}}
@@ -155,4 +157,33 @@ document.getElementById('langSwitch').addEventListener('click',()=>apply(lang===
  <path d="M58 44 56 69M62 44 64 69" stroke="#c18b58" stroke-width=".8"/>
  <path d="M57 62l-7 10m13-10 7 10" stroke="#34251f" stroke-width="1.2" stroke-linecap="round"/>
 </g>
-</svg></span></div></body></html>
+</svg></span></div>
+<script>
+(function(){
+ const butterfly=document.querySelector('.butterfly');
+ if(!butterfly || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ function fly(){
+  const maxX=Math.max(0,window.innerWidth-100);
+  const x=Math.random()*maxX;
+  const y=window.innerHeight*(.12+Math.random()*.72);
+  const direction=Math.random()<.5?-1:1;
+  const distance=180+Math.random()*260;
+  const drift=(Math.random()-.5)*150;
+  const duration=7+Math.random()*5;
+  butterfly.classList.remove('is-flying');
+  butterfly.style.left=x+'px';
+  butterfly.style.top=y+'px';
+  butterfly.style.setProperty('--flight-x',(distance*direction)+'px');
+  butterfly.style.setProperty('--flight-y',drift+'px');
+  butterfly.style.setProperty('--flight-time',duration+'s');
+  void butterfly.offsetWidth;
+  butterfly.classList.add('is-flying');
+  butterfly.onanimationend=()=>{
+   butterfly.classList.remove('is-flying');
+   const pause=3500+Math.random()*7500;
+   window.setTimeout(fly,pause);
+  };
+ }
+ window.setTimeout(fly,1200+Math.random()*3500);
+})();
+</script></body></html>
