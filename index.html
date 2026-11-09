@@ -20,6 +20,17 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 .contact{background:var(--ink);color:var(--paper);border:0}.contact .kicker{color:#b9b9ae}.contact-grid{display:grid;grid-template-columns:1fr .7fr;gap:45px;align-items:end}.contact h2{font-size:clamp(3.5rem,7vw,6.4rem);line-height:.96;letter-spacing:-.08em;margin:20px 0}.contact p{color:#b9b9ae}.contact a{display:block;border-bottom:1px solid #596057;padding:10px 0;max-width:320px}.contact a:hover{color:var(--peach)}footer{background:var(--ink);color:#a5a79f;padding:22px 0;font:.62rem var(--mono);display:flex;justify-content:space-between}
 @media(max-width:760px){header{height:auto;padding:18px 0;align-items:flex-start;gap:16px;flex-direction:column}nav{flex-wrap:wrap;gap:14px}.hero{grid-template-columns:1fr;padding:65px 0;min-height:0}.film-img{height:220px}.head{grid-template-columns:1fr;gap:14px}.about,.contact-grid{grid-template-columns:1fr;gap:26px}.projects{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:5px}section{padding:68px 0}footer{flex-direction:column;gap:7px}}
 @media(max-width:440px){.wrap{width:calc(100% - 32px)}h1{font-size:3.8rem}.skills{grid-template-columns:1fr}}
+
+/* Subtle blue butterflies floating through the portfolio */
+.butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2;contain:layout paint}
+.butterfly{position:absolute;display:block;font-size:clamp(17px,2vw,25px);opacity:.58;filter:drop-shadow(0 2px 5px rgba(25,75,105,.18));will-change:transform}
+.butterfly.one{left:7%;top:28%;animation:butterfly-drift-one 19s ease-in-out infinite}
+.butterfly.two{right:9%;top:62%;font-size:20px;animation:butterfly-drift-two 23s ease-in-out -7s infinite}
+.butterfly.three{left:48%;top:82%;font-size:16px;opacity:.4;animation:butterfly-drift-three 27s ease-in-out -13s infinite}
+@keyframes butterfly-drift-one{0%,100%{transform:translate(0,0) rotate(-12deg)}25%{transform:translate(42px,-34px) rotate(10deg)}55%{transform:translate(85px,24px) rotate(-8deg)}80%{transform:translate(28px,48px) rotate(12deg)}}
+@keyframes butterfly-drift-two{0%,100%{transform:translate(0,0) rotate(10deg)}30%{transform:translate(-52px,38px) rotate(-14deg)}65%{transform:translate(-92px,-28px) rotate(8deg)}}
+@keyframes butterfly-drift-three{0%,100%{transform:translate(0,0) rotate(0)}35%{transform:translate(65px,-45px) rotate(16deg)}70%{transform:translate(-35px,-75px) rotate(-12deg)}}
+@media(prefers-reduced-motion:reduce){.butterfly{animation:none!important;display:none}}
 </style>
 </head>
 <body>
@@ -113,4 +124,4 @@ document.getElementById('langSwitch').textContent=next==='en'?'ES':'EN';
 }
 document.getElementById('langSwitch').addEventListener('click',()=>apply(lang==='es'?'en':'es'));
 })();
-</script></body></html>
+</script><div class="butterfly-layer" aria-hidden="true"><span class="butterfly one">🦋</span><span class="butterfly two">🦋</span><span class="butterfly three">🦋</span></div></body></html>
