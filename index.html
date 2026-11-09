@@ -21,19 +21,18 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 @media(max-width:760px){header{height:auto;padding:18px 0;align-items:flex-start;gap:16px;flex-direction:column}nav{flex-wrap:wrap;gap:14px}.hero{grid-template-columns:1fr;padding:65px 0;min-height:0}.film-img{height:220px}.head{grid-template-columns:1fr;gap:14px}.about,.contact-grid{grid-template-columns:1fr;gap:26px}.projects{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr;gap:5px}section{padding:68px 0}footer{flex-direction:column;gap:7px}}
 @media(max-width:440px){.wrap{width:calc(100% - 32px)}h1{font-size:3.8rem}.skills{grid-template-columns:1fr}}
 
-/* One vivid blue butterfly, inspired by the reference image */
+/* Single morpho butterfly: enters and leaves through opposite corners */
 .butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
-.butterfly{position:absolute;left:0;top:0;display:block;width:88px;height:88px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:transform,opacity}
+.butterfly{position:absolute;left:0;top:0;display:block;width:180px;height:60px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:transform,opacity}
 .butterfly img{width:100%;height:100%;object-fit:contain;display:block}
-.butterfly.is-flying{animation:butterfly-pop var(--flight-time,9s) ease-in-out forwards}
-@keyframes butterfly-pop{0%{opacity:0;transform:translate(0,0) scale(.78) rotate(-9deg)}12%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(var(--flight-x,260px),var(--flight-y,-35px)) scale(1) rotate(8deg)}}
-.butterfly .wing-left{transform-origin:58px 49px;animation:wing-left .22s ease-in-out infinite alternate}
-.butterfly .wing-right{transform-origin:62px 49px;animation:wing-right .22s ease-in-out infinite alternate}
-@keyframes wing-left{from{transform:scaleX(.72) rotate(-5deg)}to{transform:scaleX(1) rotate(3deg)}}
-@keyframes wing-right{from{transform:scaleX(.72) rotate(5deg)}to{transform:scaleX(1) rotate(-3deg)}}
-@keyframes butterfly-cross{0%,8%{left:-100px;opacity:0;transform:translateY(0) rotate(-7deg)}14%{opacity:1}78%{left:calc(100% - 30px);opacity:1;transform:translateY(-8px) rotate(5deg)}86%,100%{left:calc(100% + 100px);opacity:0;transform:translateY(8px) rotate(2deg)}}
-@keyframes wing-flutter{from{transform:scaleX(.72) rotateY(18deg)}to{transform:scaleX(1) rotateY(-12deg)}}
-@media(prefers-reduced-motion:reduce){.butterfly,.butterfly svg{animation:none!important}}
+.butterfly.is-flying{animation:butterfly-diagonal var(--flight-time,9s) ease-in-out forwards}
+@keyframes butterfly-diagonal{
+  0%,7%{opacity:0;transform:translate(0,0) rotate(-5deg)}
+  13%{opacity:1}
+  78%{opacity:1;transform:translate(calc(var(--flight-x)*.78),calc(var(--flight-y)*.78)) rotate(3deg)}
+  100%{opacity:0;transform:translate(var(--flight-x),var(--flight-y)) rotate(7deg)}
+}
+@media(prefers-reduced-motion:reduce){.butterfly.is-flying{animation-duration:1ms!important}}
 </style>
 </head>
 <body>
@@ -131,29 +130,26 @@ document.getElementById('langSwitch').addEventListener('click',()=>apply(lang===
 <script>
 (function(){
  const butterfly=document.querySelector('.butterfly');
- if(!butterfly || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+ if(!butterfly) return;
  function fly(){
-  const maxX=Math.max(0,window.innerWidth-100);
-  const x=Math.random()*maxX;
-  const y=window.innerHeight*(.12+Math.random()*.72);
-  const direction=Math.random()<.5?-1:1;
-  const distance=180+Math.random()*260;
-  const drift=(Math.random()-.5)*150;
-  const duration=7+Math.random()*5;
+  const width=180,height=60;
+  const fromBottom=Math.random()<.5;
+  const startY=fromBottom?Math.max(0,window.innerHeight-height-12):12;
+  const endY=fromBottom?12:Math.max(0,window.innerHeight-height-12);
+  const startX=Math.max(0,window.innerWidth-width+8);
   butterfly.classList.remove('is-flying');
-  butterfly.style.left=x+'px';
-  butterfly.style.top=y+'px';
-  butterfly.style.setProperty('--flight-x',(distance*direction)+'px');
-  butterfly.style.setProperty('--flight-y',drift+'px');
-  butterfly.style.setProperty('--flight-time',duration+'s');
+  butterfly.style.left=startX+'px';
+  butterfly.style.top=startY+'px';
+  butterfly.style.setProperty('--flight-x',(-window.innerWidth-width-20)+'px');
+  butterfly.style.setProperty('--flight-y',(endY-startY)+'px');
+  butterfly.style.setProperty('--flight-time',(7+Math.random()*2)+'s');
   void butterfly.offsetWidth;
   butterfly.classList.add('is-flying');
   butterfly.onanimationend=()=>{
    butterfly.classList.remove('is-flying');
-   const pause=3500+Math.random()*7500;
-   window.setTimeout(fly,pause);
+   butterfly.style.opacity='0';
+   window.setTimeout(fly,2000+Math.random()*1000);
   };
  }
- window.setTimeout(fly,1200+Math.random()*3500);
-})();
-</script></body></html>
+ window.setTimeout(fly,800);
+})();</script></body></html>
