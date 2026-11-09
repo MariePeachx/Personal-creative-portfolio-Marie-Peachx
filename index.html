@@ -22,15 +22,15 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 @media(max-width:440px){.wrap{width:calc(100% - 32px)}h1{font-size:3.8rem}.skills{grid-template-columns:1fr}}
 
 /* Subtle blue butterflies floating through the portfolio */
-.butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:2;contain:layout paint}
-.butterfly{position:absolute;display:block;font-size:clamp(17px,2vw,25px);opacity:.58;filter:drop-shadow(0 2px 5px rgba(25,75,105,.18));will-change:transform}
+.butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
+.butterfly{position:absolute;display:block;width:34px;height:34px;opacity:.9;filter:drop-shadow(0 2px 5px rgba(25,75,105,.28));will-change:transform}.butterfly svg{width:100%;height:100%;overflow:visible}
 .butterfly.one{left:7%;top:28%;animation:butterfly-drift-one 19s ease-in-out infinite}
-.butterfly.two{right:9%;top:62%;font-size:20px;animation:butterfly-drift-two 23s ease-in-out -7s infinite}
-.butterfly.three{left:48%;top:82%;font-size:16px;opacity:.4;animation:butterfly-drift-three 27s ease-in-out -13s infinite}
+.butterfly.two{right:9%;top:62%;width:29px;height:29px;animation:butterfly-drift-two 23s ease-in-out -7s infinite}
+.butterfly.three{left:48%;top:82%;width:24px;height:24px;opacity:.75;animation:butterfly-drift-three 27s ease-in-out -13s infinite}
 @keyframes butterfly-drift-one{0%,100%{transform:translate(0,0) rotate(-12deg)}25%{transform:translate(42px,-34px) rotate(10deg)}55%{transform:translate(85px,24px) rotate(-8deg)}80%{transform:translate(28px,48px) rotate(12deg)}}
 @keyframes butterfly-drift-two{0%,100%{transform:translate(0,0) rotate(10deg)}30%{transform:translate(-52px,38px) rotate(-14deg)}65%{transform:translate(-92px,-28px) rotate(8deg)}}
 @keyframes butterfly-drift-three{0%,100%{transform:translate(0,0) rotate(0)}35%{transform:translate(65px,-45px) rotate(16deg)}70%{transform:translate(-35px,-75px) rotate(-12deg)}}
-@media(prefers-reduced-motion:reduce){.butterfly{animation:none!important;display:none}}
+@media(prefers-reduced-motion:reduce){.butterfly{animation:none!important;}}
 </style>
 </head>
 <body>
@@ -124,4 +124,4 @@ document.getElementById('langSwitch').textContent=next==='en'?'ES':'EN';
 }
 document.getElementById('langSwitch').addEventListener('click',()=>apply(lang==='es'?'en':'es'));
 })();
-</script><div class="butterfly-layer" aria-hidden="true"><span class="butterfly one">🦋</span><span class="butterfly two">🦋</span><span class="butterfly three">🦋</span></div></body></html>
+</script><div class="butterfly-layer" aria-hidden="true"><span class="butterfly one"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31 30C21 5 4 5 5 22c1 10 12 14 25 13C17 34 9 44 17 53c7 7 14-2 15-18 1 16 8 25 15 18 8-9 0-19-13-18 13 1 24-3 25-13C60 5 43 5 33 30Z" fill="#168bd0" stroke="#b8e8ff" stroke-width="1.6"/><path d="M32 29v27M11 18c7-4 13 3 17 12M53 18c-7-4-13 3-17 12M17 48c5-5 10-7 14-8M47 48c-5-5-10-7-14-8" fill="none" stroke="#d9f4ff" stroke-width="1.4" stroke-linecap="round"/><path d="M32 29c-2-6-1-10 2-13" fill="none" stroke="#173c65" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="butterfly two"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31 30C21 5 4 5 5 22c1 10 12 14 25 13C17 34 9 44 17 53c7 7 14-2 15-18 1 16 8 25 15 18 8-9 0-19-13-18 13 1 24-3 25-13C60 5 43 5 33 30Z" fill="#168bd0" stroke="#b8e8ff" stroke-width="1.6"/><path d="M32 29v27M11 18c7-4 13 3 17 12M53 18c-7-4-13 3-17 12M17 48c5-5 10-7 14-8M47 48c-5-5-10-7-14-8" fill="none" stroke="#d9f4ff" stroke-width="1.4" stroke-linecap="round"/><path d="M32 29c-2-6-1-10 2-13" fill="none" stroke="#173c65" stroke-width="1.5" stroke-linecap="round"/></svg></span><span class="butterfly three"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M31 30C21 5 4 5 5 22c1 10 12 14 25 13C17 34 9 44 17 53c7 7 14-2 15-18 1 16 8 25 15 18 8-9 0-19-13-18 13 1 24-3 25-13C60 5 43 5 33 30Z" fill="#168bd0" stroke="#b8e8ff" stroke-width="1.6"/><path d="M32 29v27M11 18c7-4 13 3 17 12M53 18c-7-4-13 3-17 12M17 48c5-5 10-7 14-8M47 48c-5-5-10-7-14-8" fill="none" stroke="#d9f4ff" stroke-width="1.4" stroke-linecap="round"/><path d="M32 29c-2-6-1-10 2-13" fill="none" stroke="#173c65" stroke-width="1.5" stroke-linecap="round"/></svg></span></div></body></html>
