@@ -24,7 +24,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 /* One vivid blue butterfly, inspired by the reference image */
 .butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
 .butterfly{position:absolute;left:0;top:0;display:block;width:88px;height:88px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:transform,opacity}
-.butterfly svg{width:100%;height:100%;overflow:visible}
+.butterfly img{width:100%;height:100%;object-fit:contain;display:block}
 .butterfly.is-flying{animation:butterfly-pop var(--flight-time,9s) ease-in-out forwards}
 @keyframes butterfly-pop{0%{opacity:0;transform:translate(0,0) scale(.78) rotate(-9deg)}12%{opacity:1}78%{opacity:1}100%{opacity:0;transform:translate(var(--flight-x,260px),var(--flight-y,-35px)) scale(1) rotate(8deg)}}
 .butterfly .wing-left{transform-origin:58px 49px;animation:wing-left .22s ease-in-out infinite alternate}
@@ -127,37 +127,7 @@ document.getElementById('langSwitch').textContent=next==='en'?'ES':'EN';
 }
 document.getElementById('langSwitch').addEventListener('click',()=>apply(lang==='es'?'en':'es'));
 })();
-</script><div class="butterfly-layer" aria-hidden="true"><span class="butterfly one"><svg viewBox="0 0 120 100" aria-hidden="true">
-<defs>
- <linearGradient id="morphoBlue" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#8af4ff"/><stop offset=".22" stop-color="#22d4ff"/><stop offset=".52" stop-color="#087bc8"/><stop offset=".8" stop-color="#03447e"/><stop offset="1" stop-color="#172d49"/></linearGradient>
- <linearGradient id="morphoShade" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20c9f4"/><stop offset=".55" stop-color="#075b9e"/><stop offset="1" stop-color="#382d2c"/></linearGradient>
- <radialGradient id="wingGlow"><stop offset="0" stop-color="#b8f8ff" stop-opacity=".9"/><stop offset="1" stop-color="#b8f8ff" stop-opacity="0"/></radialGradient>
- <pattern id="scales" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M0 0Q1.5 2 3 0" fill="none" stroke="#b8f5ff" stroke-opacity=".28" stroke-width=".45"/></pattern>
-</defs>
-<g class="wing-left">
- <path d="M57 48C48 31 35 13 19 10 7 8 2 17 5 29c3 13 18 23 48 27-19-1-31 5-30 17 1 10 12 17 21 10 8-7 12-20 14-32Z" fill="url(#morphoBlue)" stroke="#302a29" stroke-width="2.8" stroke-linejoin="round"/>
- <path d="M57 48C48 31 35 13 19 10 7 8 2 17 5 29c3 13 18 23 48 27-19-1-31 5-30 17 1 10 12 17 21 10 8-7 12-20 14-32Z" fill="url(#scales)" opacity=".9"/>
- <path d="M53 48Q31 25 10 20M53 51Q28 42 8 31M53 55Q31 57 25 75M49 55Q43 69 43 83" fill="none" stroke="#a8efff" stroke-width=".9" opacity=".75"/>
- <path d="M14 17Q29 14 43 31L55 49Q35 40 17 29Z" fill="url(#wingGlow)" opacity=".6"/>
- <path d="M9 27Q19 39 39 44M27 75q7 8 13 1" fill="none" stroke="#f0d2a0" stroke-width="1.5" opacity=".8"/>
- <path d="M7 25l-2 4m6 7-2 3m7 8-2 3m10 8-1 3m5 12-1 3" stroke="#e6c59c" stroke-width="2" stroke-linecap="round"/>
-</g>
-<g class="wing-right">
- <path d="M63 48C72 31 85 13 101 10c12-2 17 7 14 19-3 13-18 23-48 27 19-1 31 5 30 17-1 10-12 17-21 10-8-7-12-20-14-32Z" fill="url(#morphoBlue)" stroke="#302a29" stroke-width="2.8" stroke-linejoin="round"/>
- <path d="M63 48C72 31 85 13 101 10c12-2 17 7 14 19-3 13-18 23-48 27 19-1 31 5 30 17-1 10-12 17-21 10-8-7-12-20-14-32Z" fill="url(#scales)" opacity=".9"/>
- <path d="M63 48Q89 25 110 20M67 51Q92 42 112 31M67 55Q89 57 95 75M71 55Q77 69 77 83" fill="none" stroke="#a8efff" stroke-width=".9" opacity=".75"/>
- <path d="M106 17Q91 14 77 31L65 49Q85 40 103 29Z" fill="url(#wingGlow)" opacity=".6"/>
- <path d="M111 27Q101 39 81 44M93 75q-7 8-13 1" fill="none" stroke="#f0d2a0" stroke-width="1.5" opacity=".8"/>
- <path d="M113 25l2 4m-6 7 2 3m-7 8 2 3m-10 8 1 3m-5 12 1 3" stroke="#e6c59c" stroke-width="2" stroke-linecap="round"/>
-</g>
-<g>
- <ellipse cx="60" cy="52" rx="3.4" ry="21" fill="#5b3426" stroke="#1f1c1b" stroke-width="1.2"/>
- <path d="M59 35Q48 13 43 15M61 35Q72 13 77 15" fill="none" stroke="#30251f" stroke-width="1.2" stroke-linecap="round"/>
- <circle cx="60" cy="31" r="3.2" fill="#6e4029" stroke="#1e1a18" stroke-width="1"/>
- <path d="M58 44 56 69M62 44 64 69" stroke="#c18b58" stroke-width=".8"/>
- <path d="M57 62l-7 10m13-10 7 10" stroke="#34251f" stroke-width="1.2" stroke-linecap="round"/>
-</g>
-</svg></span></div>
+</script><div class="butterfly-layer" aria-hidden="true"><span class="butterfly one"><img src="assets/morpho-butterfly.gif?v=1" alt=""></span></div>
 <script>
 (function(){
  const butterfly=document.querySelector('.butterfly');
