@@ -23,9 +23,9 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 
 /* One vivid blue butterfly, inspired by the reference image */
 .butterfly-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50;contain:layout paint}
-.butterfly{position:absolute;left:-100px;top:36%;display:block;width:88px;height:88px;opacity:.98;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:left,transform;animation:butterfly-cross 34s linear infinite alternate}
+.butterfly{position:absolute;left:-100px;top:36%;display:block;width:88px;height:88px;opacity:0;filter:drop-shadow(0 3px 7px rgba(0,35,65,.32));will-change:left,transform,opacity;animation:butterfly-cross 22s linear infinite}
 .butterfly svg{width:100%;height:100%;overflow:visible;transform-origin:50% 50%;animation:wing-flutter .2s ease-in-out infinite alternate}
-@keyframes butterfly-cross{0%{left:-100px;transform:translateY(0) rotate(-7deg)}20%{transform:translateY(-30px) rotate(5deg)}42%{transform:translateY(19px) rotate(-4deg)}64%{transform:translateY(-22px) rotate(6deg)}82%{transform:translateY(12px) rotate(-3deg)}100%{left:calc(100% + 100px);transform:translateY(-8px) rotate(5deg)}}
+@keyframes butterfly-cross{0%,8%{left:-100px;opacity:0;transform:translateY(0) rotate(-7deg)}14%{opacity:1}78%{left:calc(100% - 30px);opacity:1;transform:translateY(-8px) rotate(5deg)}86%,100%{left:calc(100% + 100px);opacity:0;transform:translateY(8px) rotate(2deg)}}
 @keyframes wing-flutter{from{transform:scaleX(.72) rotateY(18deg)}to{transform:scaleX(1) rotateY(-12deg)}}
 @media(prefers-reduced-motion:reduce){.butterfly,.butterfly svg{animation:none!important}}
 </style>
