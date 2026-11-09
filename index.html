@@ -10,7 +10,7 @@
 <style>
 :root{--paper:#f5f0e8;--ink:#252821;--muted:#74776e;--peach:#d9957d;--line:#dcd5ca;--white:#fffdf8;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--mono:'DM Mono',monospace}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#f5f0e8ed;backdrop-filter:blur(12px);z-index:5}.brand{font-size:1.25rem;font-weight:700;letter-spacing:-.06em}nav{display:flex;gap:25px;font-size:.78rem;color:var(--muted)}nav a:hover{color:var(--peach)}
+header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#f5f0e8ed;backdrop-filter:blur(12px);z-index:5}.brand{font-size:1.25rem;font-weight:700;letter-spacing:-.06em}nav{display:flex;gap:25px;font-size:.78rem;color:var(--muted);align-items:center}.lang-switch{border:1px solid var(--line);background:transparent;color:var(--ink);padding:7px 10px;font: .62rem var(--mono);letter-spacing:.08em;cursor:pointer}.lang-switch:hover{border-color:var(--peach);color:var(--peach)}nav a:hover{color:var(--peach)}
 .hero{min-height:620px;padding:90px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow,.kicker,.mono{font: .67rem var(--mono);text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}h1{font-size:clamp(4rem,8vw,7.6rem);line-height:.91;letter-spacing:-.09em;font-weight:600;margin:24px 0}.hero em,h2 em{font-family:var(--serif);font-weight:500;color:var(--peach)}.lead{max-width:610px;color:#555b54;font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;padding:11px 18px;border:1px solid var(--ink);font-size:.78rem}.btn.dark{background:var(--ink);color:var(--paper)}.btn:hover{background:var(--peach);border-color:var(--peach);color:var(--ink)}
 .hero-note{font:italic 1.2rem var(--serif);color:#656b60;margin:0 0 22px 2px;letter-spacing:.01em}.film{background:#303a33;padding:16px;box-shadow:12px 14px 0 #e4dbcf;transform:none}.film-img{height:320px;margin:12px 0;background:linear-gradient(145deg,#8c9a8b33,#17201d33),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85') center/cover}.film-meta{display:flex;justify-content:space-between;color:#f4eee3;font: .58rem var(--mono);letter-spacing:.12em}.ticker{border-block:1px solid var(--line);padding:17px 0;text-align:center;font:.67rem var(--mono);letter-spacing:.13em;color:var(--muted)}.ticker span{padding:0 14px;color:var(--peach)}
 section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;grid-template-columns:.35fr 1fr;gap:35px;margin-bottom:45px}.head h2{font-size:clamp(2.8rem,5vw,5rem);line-height:1;letter-spacing:-.075em;font-weight:500;margin:0}.about{display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;align-items:center}.about-portrait{width:100%;max-width:350px;aspect-ratio:4/5;object-fit:cover;object-position:center 42%;display:block;filter:saturate(.88);box-shadow:12px 14px 0 #e4dbcf}.about-copy p{font-size:1.02rem;margin-top:0}.note{border-left:2px solid var(--peach);padding:5px 0 5px 18px;color:var(--muted);font-size:.9rem}
@@ -23,7 +23,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 </style>
 </head>
 <body>
-<header class="wrap"><a class="brand" href="#inicio">Marie Peachx</a><nav><a href="#sobre">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#competencias">Competencias</a><a href="#trayectoria">Trayectoria</a><a href="#contacto">Contacto</a></nav></header>
+<header class="wrap"><a class="brand" href="#inicio">Marie Peachx</a><nav><a href="#sobre">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#competencias">Competencias</a><a href="#trayectoria">Trayectoria</a><a href="#contacto">Contacto</a><button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button></nav></header>
 <main>
 <section class="hero wrap" id="inicio"><div><div class="eyebrow">PORTFOLIO CREATIVO · VÍDEO, IDEAS Y CURIOSIDAD</div><h1>Historias que merecen ser <em>vistas.</em></h1><p class="lead">Edito vídeo y creo contenido con intención. Combino narrativa visual, pensamiento creativo y curiosidad por la ciencia y la tecnología para transformar ideas en historias que conectan.</p><div class="actions"><a class="btn dark" href="#proyectos">Explorar proyectos ↗</a><a class="btn" href="#contacto">Contacto ↗</a></div></div><div><p class="hero-note">La curiosidad es el principio de todo.</p><div class="film"><div class="film-meta"><span>MARIE PEACHX</span><span>TAKE 01</span></div><div class="film-img" role="img" aria-label="Paisaje cinematográfico"></div><div class="film-meta"><span>IDEAS IN MOTION</span><span>25 FPS</span></div></div></div></section>
 <div class="ticker">VIDEO EDITING <span>·</span> CONTENT CREATION <span>·</span> CREATIVE THINKING <span>·</span> SCIENCE <span>·</span> TECHNOLOGY</div>
@@ -40,4 +40,77 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}.head{display:grid;gr
 <section id="trayectoria"><div class="wrap"><div class="head"><div class="kicker">04 / BACKGROUND</div><h2>De la ciencia a las <em>historias.</em></h2></div><div class="timeline"><div class="item"><time>FORMACIÓN</time><div><h3>Laboratorio Clínico y Biomédico</h3><p>Ciclo Formativo de Grado Superior.</p></div></div><div class="item"><time>FORMACIÓN</time><div><h3>Anatomía Patológica y Citodiagnóstico</h3><p>Ciclo Formativo de Grado Superior.</p></div></div><div class="item"><time>ACTUALIDAD</time><div><h3>Desarrollo audiovisual</h3><p>Formación y práctica en edición de vídeo, narrativa visual y herramientas creativas.</p></div></div></div></div></section>
 <section class="contact" id="contacto"><div class="wrap"><div class="contact-grid"><div><div class="kicker">05 / CONTACTO</div><h2>¿Creamos algo <em>juntas?</em></h2><p>Abierta a colaboraciones, proyectos audiovisuales y oportunidades creativas.</p></div><div><p class="mono">ENLACES PROFESIONALES</p><p>Los datos de contacto y perfiles sociales se añadirán cuando estén confirmados.</p></div></div></div></section>
 </main><footer class="wrap"><span>© 2026 MARIE PEACHX</span><span>MADE WITH INTENTION · SPAIN</span></footer>
-</body></html>
+
+<script>
+(function(){
+const es=[
+['nav a',0,'Sobre mí'],['nav a',1,'Proyectos'],['nav a',2,'Competencias'],['nav a',3,'Trayectoria'],['nav a',4,'Contacto'],
+['.eyebrow',0,'PORTFOLIO CREATIVO · VÍDEO, IDEAS Y CURIOSIDAD'],
+['h1',0,'Historias que merecen ser <em>vistas.</em>'],
+['.lead',0,'Edito vídeo y creo contenido con intención. Combino narrativa visual, pensamiento creativo y curiosidad por la ciencia y la tecnología para transformar ideas en historias que conectan.'],
+['.actions .btn',0,'Explorar proyectos ↗'],['.actions .btn',1,'Contacto ↗'],
+['.hero-note',0,'La curiosidad es el principio de todo.'],
+['.ticker',0,'VIDEO EDITING <span>·</span> CONTENT CREATION <span>·</span> CREATIVE THINKING <span>·</span> SCIENCE <span>·</span> TECHNOLOGY'],
+['#sobre .kicker',0,'01 / PERFIL'],['#sobre h2',0,'Creatividad con <em>curiosidad.</em>'],
+['.about-copy p',0,'Me interesa contar historias a través de imágenes, ritmo y sonido. Disfruto explorando cómo una idea puede convertirse en una pieza audiovisual con personalidad, desde el primer concepto hasta el montaje final.'],
+['.about-copy p',1,'Mi mirada combina la creación audiovisual con una formación científica y un interés constante por las herramientas tecnológicas y los nuevos procesos creativos.'],
+['.note',0,'Este portfolio reúne proyectos personales, colaboraciones y experimentos creativos. Los proyectos en desarrollo se identifican expresamente como tales.'],
+['#proyectos .kicker',0,'02 / TRABAJO SELECCIONADO'],['#proyectos h2',0,'Ideas en <em>movimiento.</em>'],
+['.project h3',0,'Marie Peachx'],['.project p',0,'Canal personal de creación audiovisual: experimentación con vídeo, edición, narrativa visual y proyectos creativos.'],['.project-link',0,'Ver canal de YouTube ↗'],
+['.project h3',1,'Meritamen'],['.project p',1,'Proyecto de divulgación histórica en formato vídeo corto, centrado en acercar episodios, personajes y curiosidades del pasado a nuevas audiencias.'],['.project-link',1,'Ver Meritamen en YouTube ↗'],
+['.project h3',2,'Travel Stories'],['.project p',2,'Diarios audiovisuales de viaje que combinan observación, montaje, música y pequeñas historias del camino.'],
+['.project h3',3,'Gaming Events'],['.project p',3,'Organización y coordinación de eventos relacionados con videojuegos y comunidades digitales, conectando participantes, creadores y experiencias interactivas.'],
+['.project h3',4,'Leadingirls'],['.project p',4,'Participación en el desarrollo de una propuesta para acercar las profesiones digitales y la creación tecnológica a estudiantes, mediante actividades, entrevistas y experiencias interactivas vinculadas a videojuegos.'],
+['.project h3',5,'Short Film'],['.project p',5,'Participación en un cortometraje independiente desde distintas áreas creativas, incluyendo guion, interpretación y maquillaje.'],
+['#competencias .kicker',0,'03 / EN QUÉ TRABAJO'],['#competencias h2',0,'Una mezcla de <em>disciplinas.</em>'],
+['.skill h3',0,'Edición audiovisual'],['.skill p',0,'DaVinci Resolve, montaje, ritmo y narrativa visual.'],
+['.skill h3',1,'Creación de contenido'],['.skill p',1,'Conceptualización, storytelling y formatos digitales.'],
+['.skill h3',2,'Pensamiento creativo'],['.skill p',2,'Desarrollo de ideas, experimentación y resolución visual.'],
+['.skill h3',3,'Ciencia y tecnología'],['.skill p',3,'Formación científica, herramientas digitales y automatización.'],
+['#trayectoria .kicker',0,'04 / TRAYECTORIA'],['#trayectoria h2',0,'De la ciencia a las <em>historias.</em>'],
+['.item h3',0,'Laboratorio Clínico y Biomédico'],['.item p',0,'Ciclo Formativo de Grado Superior.'],
+['.item h3',1,'Anatomía Patológica y Citodiagnóstico'],['.item p',1,'Ciclo Formativo de Grado Superior.'],
+['.item h3',2,'Desarrollo audiovisual'],['.item p',2,'Formación y práctica en edición de vídeo, narrativa visual y herramientas creativas.'],
+['#contacto .kicker',0,'05 / CONTACTO'],['#contacto h2',0,'¿Creamos algo <em>juntas?</em>'],['#contacto .contact-grid p',0,'Abierta a colaboraciones, proyectos audiovisuales y oportunidades creativas.'],['#contacto .mono',0,'ENLACES PROFESIONALES'],['#contacto .contact-grid p',1,'Los datos de contacto y perfiles sociales se añadirán cuando estén confirmados.']
+];
+const en=[
+['nav a',0,'About'],['nav a',1,'Projects'],['nav a',2,'Skills'],['nav a',3,'Background'],['nav a',4,'Contact'],
+['.eyebrow',0,'CREATIVE PORTFOLIO · VIDEO, IDEAS & CURIOSITY'],
+['h1',0,'Stories worth <em>seeing.</em>'],
+['.lead',0,'I edit video and create content with purpose. I combine visual storytelling, creative thinking, and a curiosity for science and technology to turn ideas into stories that connect.'],
+['.actions .btn',0,'Explore projects ↗'],['.actions .btn',1,'Get in touch ↗'],
+['.hero-note',0,'Curiosity is where everything begins.'],
+['.ticker',0,'VIDEO EDITING <span>·</span> CONTENT CREATION <span>·</span> CREATIVE THINKING <span>·</span> SCIENCE <span>·</span> TECHNOLOGY'],
+['#sobre .kicker',0,'01 / ABOUT'],['#sobre h2',0,'Creativity driven by <em>curiosity.</em>'],
+['.about-copy p',0,'I am interested in telling stories through images, rhythm, and sound. I enjoy exploring how an idea can become an audiovisual piece with its own personality, from the first concept to the final edit.'],
+['.about-copy p',1,'My perspective brings together audiovisual creation, a scientific background, and a lasting interest in technology and new creative processes.'],
+['.note',0,'This portfolio brings together personal projects, collaborations, and creative experiments. Projects that are still in development are clearly identified.'],
+['#proyectos .kicker',0,'02 / SELECTED WORK'],['#proyectos h2',0,'Ideas in <em>motion.</em>'],
+['.project h3',0,'Marie Peachx'],['.project p',0,'Personal audiovisual channel exploring video creation, editing, visual storytelling, and creative projects.'],['.project-link',0,'Watch on YouTube ↗'],
+['.project h3',1,'Meritamen'],['.project p',1,'A short-form history project bringing stories, historical figures, and fascinating facts from the past to new audiences.'],['.project-link',1,'Watch Meritamen on YouTube ↗'],
+['.project h3',2,'Travel Stories'],['.project p',2,'Travel video diaries blending observation, editing, music, and small stories gathered along the way.'],
+['.project h3',3,'Gaming Events'],['.project p',3,'Organising and coordinating gaming events and digital communities, bringing participants, creators, and interactive experiences together.'],
+['.project h3',4,'Leadingirls'],['.project p',4,'Taking part in an initiative introducing students to digital careers and technology through activities, interviews, and video-game-related interactive experiences.'],
+['.project h3',5,'Short Film'],['.project p',5,'Contributed to an independent short film across several creative areas, including scriptwriting, acting, and makeup.'],
+['#competencias .kicker',0,'03 / WHAT I DO'],['#competencias h2',0,'A blend of <em>disciplines.</em>'],
+['.skill h3',0,'Video editing'],['.skill p',0,'DaVinci Resolve, editing, pacing, and visual storytelling.'],
+['.skill h3',1,'Content creation'],['.skill p',1,'Concept development, storytelling, and digital formats.'],
+['.skill h3',2,'Creative thinking'],['.skill p',2,'Idea development, experimentation, and visual problem-solving.'],
+['.skill h3',3,'Science & technology'],['.skill p',3,'Scientific education, digital tools, and automation.'],
+['#trayectoria .kicker',0,'04 / BACKGROUND'],['#trayectoria h2',0,'From science to <em>storytelling.</em>'],
+['.item h3',0,'Clinical and Biomedical Laboratory'],['.item p',0,'Higher Vocational Education and Training.'],
+['.item h3',1,'Pathological Anatomy and Cytodiagnosis'],['.item p',1,'Higher Vocational Education and Training.'],
+['.item h3',2,'Audiovisual development'],['.item p',2,'Training and hands-on practice in video editing, visual storytelling, and creative tools.'],
+['#contacto .kicker',0,'05 / CONTACT'],['#contacto h2',0,'Shall we create something <em>together?</em>'],['#contacto .contact-grid p',0,'Open to collaborations, audiovisual projects, and creative opportunities.'],['#contacto .mono',0,'PROFESSIONAL LINKS'],['#contacto .contact-grid p',1,'Contact details and social profiles will be added once confirmed.']
+];
+let lang='es';
+function apply(next){
+lang=next;const rows=next==='en'?en:es;
+rows.forEach(([sel,i,val])=>{const nodes=document.querySelectorAll(sel);if(nodes[i])nodes[i].innerHTML=val;});
+document.documentElement.lang=next;document.title=next==='en'?'Marie Peachx — Creative Portfolio':'Marie Peachx — Portfolio creativo';
+document.querySelector('meta[name="description"]').content=next==='en'?'Marie Peachx — video editing, content creation, creative thinking, science, and technology.':'Marie Peachx — edición de vídeo, creación de contenido, pensamiento creativo, ciencia y tecnología.';
+document.getElementById('langSwitch').textContent=next==='en'?'ES':'EN';
+}
+document.getElementById('langSwitch').addEventListener('click',()=>apply(lang==='es'?'en':'es'));
+})();
+</script></body></html>
