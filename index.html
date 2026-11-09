@@ -136,11 +136,11 @@ document.getElementById('langSwitch').addEventListener('click',()=>apply(lang===
   const fromBottom=Math.random()<.5;
   const startY=fromBottom?Math.max(0,window.innerHeight-height-12):12;
   const endY=fromBottom?12:Math.max(0,window.innerHeight-height-12);
-  const startX=Math.max(0,window.innerWidth-width+8);
+  const startX=window.innerWidth-20;
   butterfly.classList.remove('is-flying');
   butterfly.style.left=startX+'px';
   butterfly.style.top=startY+'px';
-  butterfly.style.setProperty('--flight-x',(-window.innerWidth-width-20)+'px');
+  butterfly.style.setProperty('--flight-x',(-window.innerWidth-width-40)+'px');
   butterfly.style.setProperty('--flight-y',(endY-startY)+'px');
   butterfly.style.setProperty('--flight-time',(7+Math.random()*2)+'s');
   void butterfly.offsetWidth;
