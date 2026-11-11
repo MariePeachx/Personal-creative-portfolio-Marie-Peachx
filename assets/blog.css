@@ -85,6 +85,14 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .ruta-flecha{width:86px;height:30px;color:#e8d9bf;flex:none;animation:empuja 2.4s ease-in-out infinite}
 @keyframes empuja{50%{transform:translateX(5px)}}
 
+/* Fotos dentro de las entradas */
+.post-body .foto{margin:2em -40px}
+.post-body .foto img{margin:0;width:100%}
+.post-body figcaption{font-size:.88rem;color:#4a5048;margin-top:10px;padding:0 10px}
+.post-body figcaption small,.post-body .creditos{display:block;font:.6rem var(--mono);letter-spacing:.06em;color:var(--muted);margin-top:4px}
+.post-body figcaption a,.post-body .creditos a{border-bottom:0;text-decoration:underline;text-decoration-color:var(--line)}
+.post-body .creditos{margin-top:2.4em}
+
 @media(max-width:900px){.posts{grid-template-columns:1fr 1fr}.sello-hero{width:120px;height:120px}}
-@media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.sello-hero{width:92px;height:92px;top:82px;bottom:auto;right:16px}.sello-post{width:96px;height:96px;bottom:-42px;right:16px}.hero-actions{flex-direction:column;align-items:flex-start;gap:6px}.ruta-flecha{width:58px;height:34px;margin:14px 0 14px 4px;transform:rotate(90deg);animation:none}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:200px 0 50px}.site-footer .wrap{flex-direction:column}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.sello-hero{width:92px;height:92px;top:82px;bottom:auto;right:16px}.sello-post{width:96px;height:96px;bottom:-42px;right:16px}.post-body .foto{margin:1.8em 0}.hero-actions{flex-direction:column;align-items:flex-start;gap:6px}.ruta-flecha{width:58px;height:34px;margin:14px 0 14px 4px;transform:rotate(90deg);animation:none}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:200px 0 50px}.site-footer .wrap{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.sello-aro,.ruta-flecha{animation:none}.card,.card:hover{transition:none}}
