@@ -93,6 +93,16 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .post-body figcaption a,.post-body .creditos a{border-bottom:0;text-decoration:underline;text-decoration-color:var(--line)}
 .post-body .creditos{margin-top:2.4em}
 
+/* Curiosidades del mundo */
+.curios-teaser{background:#e9e0cf99;border-top:1px solid var(--line);padding-bottom:30px}
+.curios-intro{max-width:620px;color:var(--muted);margin:18px 0 0}
+.posts.curios{padding-top:30px;padding-bottom:40px}
+.posts.curios .card .mono::before{content:"Nº " counter(etapa,decimal-leading-zero) " · "}
+.posts.curios .stamp{border-color:#3f7fd0;color:#2f6fbf}
+.ver-todas{display:inline-block;margin-bottom:70px;font:.66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--peach-dark);border-bottom:1px dashed var(--peach)}
+.curios-hero{min-height:70vh}
+.curios-nota{margin-top:2.4em;padding:16px 18px;background:var(--white);border:1px dashed #3f7fd0;font-size:.92rem;color:#4a5048}
+
 @media(max-width:900px){.posts{grid-template-columns:1fr 1fr}.sello-hero{width:120px;height:120px}}
 @media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.sello-hero{width:92px;height:92px;top:82px;bottom:auto;right:16px}.sello-post{width:96px;height:96px;bottom:-42px;right:16px}.post-body .foto{margin:1.8em 0}.hero-actions{flex-direction:column;align-items:flex-start;gap:6px}.ruta-flecha{width:58px;height:34px;margin:14px 0 14px 4px;transform:rotate(90deg);animation:none}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:200px 0 50px}.site-footer .wrap{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.sello-aro,.ruta-flecha{animation:none}.card,.card:hover{transition:none}}

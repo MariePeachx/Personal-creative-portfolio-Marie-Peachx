@@ -11,24 +11,25 @@ description: Diario de aventuras de Marie Peachx. Rutas, sitios que me han sorpr
  </div>
  {% include sello.html id="sello-hero" clase="sello-hero" %}
 </section>
+{% assign viajes = site.posts | where_exp: "p", "p.categoria != 'curiosidades'" %}
+{% assign curiosidades = site.posts | where: "categoria", "curiosidades" %}
 <div class="wrap" id="ruta">
  <div class="route-head"><h2>Últimas <em>etapas</em></h2></div>
-{% if site.posts.size > 0 %}
+{% if viajes.size > 0 %}
  <div class="posts">
- {% for post in site.posts %}
-  <a class="card" href="{{ post.url }}">
-   {% if post.portada %}<div class="card-img" style="background-image:url('{{ post.portada }}')"></div>{% else %}<div class="card-img" aria-hidden="true">🧭</div>{% endif %}
-   {% if post.lugar %}<span class="stamp">📍 {{ post.lugar }}</span>{% endif %}
-   <div class="card-body">
-    <span class="mono">{{ post.date | date: "%d/%m/%Y" }}</span>
-    <h2>{{ post.title }}</h2>
-    {% if post.resumen %}<p>{{ post.resumen }}</p>{% endif %}
-    <span class="more">Seguir la aventura →</span>
-   </div>
-  </a>
- {% endfor %}
+ {% for post in viajes %}{% include tarjeta.html post=post %}{% endfor %}
  </div>
 {% else %}
  <p class="empty">La mochila está casi lista. Pronto habrá aventuras por aquí.</p>
 {% endif %}
 </div>
+{% if curiosidades.size > 0 %}
+<section class="curios-teaser"><div class="wrap">
+ <div class="route-head"><h2>Curiosidades <em>del mundo</em></h2></div>
+ <p class="curios-intro">Cada pocos días, un país o un dato curioso sobre algún rincón del planeta. Sitios en los que todavía no he estado, pero que ya tengo apuntados.</p>
+ <div class="posts curios">
+ {% for post in curiosidades limit: 3 %}{% include tarjeta.html post=post %}{% endfor %}
+ </div>
+ <a class="ver-todas" href="/blog/curiosidades/">Ver todas las curiosidades →</a>
+</div></section>
+{% endif %}

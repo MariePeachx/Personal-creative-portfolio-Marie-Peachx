@@ -8,7 +8,7 @@ layout: blog
  <header class="post-hero" style="background-image:url('{{ fondo }}')">
   <div class="wrap">
    {% if page.lugar %}<span class="stamp">📍 {{ page.lugar }}</span>{% endif %}
-   <div class="kicker">Diario de viaje · {{ page.date | date: "%-d" }} de {{ meses[m] }} de {{ page.date | date: "%Y" }}</div>
+   <div class="kicker">{% if page.categoria == 'curiosidades' %}Curiosidades del mundo{% else %}Diario de viaje{% endif %} · {{ page.date | date: "%-d" }} de {{ meses[m] }} de {{ page.date | date: "%Y" }}</div>
    <h1>{{ page.title }}</h1>
    {% if page.resumen %}<p class="lead">{{ page.resumen }}</p>{% endif %}
   </div>
@@ -17,11 +17,11 @@ layout: blog
  <div class="post-body wrap">
   {% if page.video %}<div class="post-video{% if page.video_vertical %} vertical{% endif %}"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}?rel=0" title="{{ page.title | escape }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
   {{ content }}
-  <a class="guide-box" href="https://www.google.com/maps/contrib/108247171494160308205/reviews" target="_blank" rel="noopener noreferrer"><span class="guide-star" aria-hidden="true">★</span><span><b>¿Buscas dónde comer o dormir?</b> Soy Local Guide en Google Maps. Mira mis reseñas de los sitios por los que paso ↗</span></a>
+  {% if page.categoria == 'curiosidades' %}<p class="curios-nota">🌍 Esta entrada forma parte de <a href="/blog/curiosidades/">Curiosidades del mundo</a>: sitios en los que todavía no he estado, pero que ya tengo apuntados.</p>{% else %}<a class="guide-box" href="https://www.google.com/maps/contrib/108247171494160308205/reviews" target="_blank" rel="noopener noreferrer"><span class="guide-star" aria-hidden="true">★</span><span><b>¿Buscas dónde comer o dormir?</b> Soy Local Guide en Google Maps. Mira mis reseñas de los sitios por los que paso ↗</span></a>{% endif %}
  </div>
  <nav class="post-nav wrap">
   {% if page.previous %}<a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-  <a href="/blog/">Todas las etapas</a>
+  {% if page.categoria == 'curiosidades' %}<a href="/blog/curiosidades/">Todas las curiosidades</a>{% else %}<a href="/blog/">Todas las etapas</a>{% endif %}
   {% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }} →</a>{% else %}<span></span>{% endif %}
  </nav>
 </article>

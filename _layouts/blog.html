@@ -19,7 +19,7 @@
 <body>
 <header class="site-header"><div class="wrap">
  <a class="brand" href="/">Marie Peachx</a>
- <nav aria-label="Principal"><a href="/">Inicio</a><a href="/blog/" class="active">Blog de viajes</a><a href="/#contacto">Contacto</a></nav>
+ <nav aria-label="Principal"><a href="/">Inicio</a><a href="/blog/"{% if page.categoria != 'curiosidades' and page.url != '/blog/curiosidades/' %} class="active"{% endif %}>Viajes</a><a href="/blog/curiosidades/"{% if page.categoria == 'curiosidades' or page.url == '/blog/curiosidades/' %} class="active"{% endif %}>Curiosidades</a><a href="/#contacto">Contacto</a></nav>
 </div></header>
 <main>
 {{ content }}

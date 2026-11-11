@@ -1,0 +1,24 @@
+---
+layout: blog
+description: Curiosidades del mundo. Cada pocos días, un país o un dato curioso sobre algún rincón del planeta.
+---
+{% assign curiosidades = site.posts | where: "categoria", "curiosidades" %}
+<section class="blog-hero curios-hero" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=75')">
+ <div class="wrap">
+  <p class="frase">Un rincón nuevo del mundo cada pocos días.</p>
+  <h1>Curiosidades <em>del mundo.</em></h1>
+  <p>Países, costumbres y datos curiosos de sitios en los que todavía no he estado, pero que ya tengo apuntados en la lista.</p>
+  <div class="hero-actions"><a class="scroll-hint" href="/blog/">← Volver al diario de viajes</a></div>
+ </div>
+ {% include sello.html id="sello-hero" clase="sello-hero" %}
+</section>
+<div class="wrap" id="lista">
+ <div class="route-head"><h2>{{ curiosidades.size }} {% if curiosidades.size == 1 %}<em>curiosidad</em>{% else %}<em>curiosidades</em>{% endif %}</h2></div>
+{% if curiosidades.size > 0 %}
+ <div class="posts curios">
+ {% for post in curiosidades %}{% include tarjeta.html post=post %}{% endfor %}
+ </div>
+{% else %}
+ <p class="empty">La primera curiosidad está en camino.</p>
+{% endif %}
+</div>
