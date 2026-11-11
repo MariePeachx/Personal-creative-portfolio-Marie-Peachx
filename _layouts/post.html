@@ -12,6 +12,7 @@ layout: blog
    <h1>{{ page.title }}</h1>
    {% if page.resumen %}<p class="lead">{{ page.resumen }}</p>{% endif %}
   </div>
+  {% include sello.html id="sello-post" clase="sello-post" %}
  </header>
  <div class="post-body wrap">
   {% if page.video %}<div class="post-video{% if page.video_vertical %} vertical{% endif %}"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}?rel=0" title="{{ page.title | escape }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}

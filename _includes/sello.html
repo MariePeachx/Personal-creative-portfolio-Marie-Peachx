@@ -1,0 +1,26 @@
+{% assign sid = include.id | default: "sello" %}<svg class="sello {{ include.clase }}" viewBox="0 0 200 200" role="img" aria-label="Certificado por Marie Peachx">
+ <defs><radialGradient id="{{ sid }}-azul" cx="100" cy="92" r="46" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9be7ff"/><stop offset=".45" stop-color="#2f8ff0"/><stop offset="1" stop-color="#123f9e"/></radialGradient><path id="{{ sid }}-aro" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+ <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="1.2"/>
+ <circle cx="100" cy="100" r="93" fill="none" stroke="currentColor" stroke-width=".6"/>
+ <g class="sello-aro">
+  <text fill="currentColor" font-family="'DM Mono',monospace" font-size="11.5" font-weight="500" letter-spacing="1"><textPath href="#{{ sid }}-aro" textLength="496" lengthAdjust="spacing">CERTIFICADO POR MARIE PEACHX ✦ DIARIO DE AVENTURAS ✦ </textPath></text>
+ </g>
+ <circle cx="100" cy="100" r="64" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="1.5 3.5"/>
+ <g class="sello-mariposa" transform="translate(0,-7)" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+  <g>
+   <path d="M100 90 C 86 64, 54 56, 57 76 C 59 93, 84 99, 100 97 Z" fill="url(#{{ sid }}-azul)" fill-opacity="1"/>
+   <path d="M100 100 C 84 101, 70 110, 76 122 C 82 132, 97 120, 100 106 Z" fill="url(#{{ sid }}-azul)" fill-opacity=".85"/>
+   <path d="M98 84 Q 92 72 86 68" fill="none"/>
+   <path d="M86 82 C 78 78, 70 79, 68 84" fill="none" stroke-width=".7"/>
+  </g>
+  <g transform="translate(200,0) scale(-1,1)">
+   <path d="M100 90 C 86 64, 54 56, 57 76 C 59 93, 84 99, 100 97 Z" fill="url(#{{ sid }}-azul)" fill-opacity="1"/>
+   <path d="M100 100 C 84 101, 70 110, 76 122 C 82 132, 97 120, 100 106 Z" fill="url(#{{ sid }}-azul)" fill-opacity=".85"/>
+   <path d="M98 84 Q 92 72 86 68" fill="none"/>
+   <path d="M86 82 C 78 78, 70 79, 68 84" fill="none" stroke-width=".7"/>
+  </g>
+  <path d="M100 84 L100 120" stroke-width="2.4"/>
+ </g>
+ <text x="100" y="139" text-anchor="middle" fill="currentColor" font-family="'Playfair Display',Georgia,serif" font-style="italic" font-size="15">Marie Peachx</text>
+ <text x="100" y="151" text-anchor="middle" fill="currentColor" font-family="'DM Mono',monospace" font-size="6.5" letter-spacing="2.5">★ APPROVED ★</text>
+</svg>

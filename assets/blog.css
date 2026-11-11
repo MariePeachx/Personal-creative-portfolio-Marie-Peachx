@@ -73,6 +73,18 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .guide-box{display:flex;align-items:center;gap:14px;margin:2.4em 0 0;padding:16px 18px;background:var(--white);border:1px dashed var(--peach);font-size:.92rem;color:#4a5048;border-bottom:1px dashed var(--peach)!important}
 .guide-box:hover{border-style:solid!important}
 
-@media(max-width:900px){.posts{grid-template-columns:1fr 1fr}.compass{width:80px;height:80px}}
-@media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.compass{display:none}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:120px 0 50px}.site-footer .wrap{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){.compass{animation:none}.card,.card:hover{transition:none}}
+/* Sello «Certificado por Marie Peachx» */
+.sello{display:block}
+.sello-aro{transform-origin:100px 100px;animation:spin 50s linear infinite}
+.sello-hero{position:absolute;right:max(24px,calc((100% - 1120px)/2));bottom:64px;width:170px;height:170px;color:#f3ecdf;transform:rotate(-8deg);filter:drop-shadow(0 6px 18px #0006)}
+.sello-post{position:absolute;right:max(24px,calc((100% - 880px)/2 - 120px));bottom:-56px;width:130px;height:130px;color:var(--ink);background:var(--paper);border-radius:50%;padding:4px;transform:rotate(10deg);box-shadow:0 10px 28px #1f262033;z-index:2}
+.post-hero{overflow:visible}
+/* Flecha hacia Local Guide */
+.hero-actions{gap:12px}
+.scroll-hint::after{display:none}
+.ruta-flecha{width:86px;height:30px;color:#e8d9bf;flex:none;animation:empuja 2.4s ease-in-out infinite}
+@keyframes empuja{50%{transform:translateX(5px)}}
+
+@media(max-width:900px){.posts{grid-template-columns:1fr 1fr}.sello-hero{width:120px;height:120px}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.sello-hero{width:96px;height:96px;top:86px;bottom:auto;right:16px}.sello-post{width:96px;height:96px;bottom:-42px;right:16px}.ruta-flecha{width:56px;transform:rotate(0)}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:120px 0 50px}.site-footer .wrap{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.sello-aro,.ruta-flecha{animation:none}.card,.card:hover{transition:none}}

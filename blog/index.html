@@ -7,15 +7,9 @@ description: Diario de aventuras de Marie Peachx. Rutas, sitios que me han sorpr
   <div class="kicker"><span>Diario de viaje</span><span>Rumbo: donde sea</span><span>{{ site.posts.size }} {% if site.posts.size == 1 %}etapa{% else %}etapas{% endif %}</span></div>
   <h1>Diario de <em>aventuras.</em></h1>
   <p>Me encanta viajar y perderme un poco por el camino. Aquí cuento las rutas, los sitios que me han sorprendido y algún que otro imprevisto.</p>
-  <div class="hero-actions"><a class="scroll-hint" href="#ruta">Empieza la ruta</a><a class="guide-badge" href="https://www.google.com/maps/contrib/108247171494160308205/reviews" target="_blank" rel="noopener noreferrer"><span class="guide-star" aria-hidden="true">★</span><span><b>Local Guide</b> en Google Maps<small>Ver mis reseñas ↗</small></span></a></div>
+  <div class="hero-actions"><a class="scroll-hint" href="#ruta">Empieza la ruta</a><svg class="ruta-flecha" viewBox="0 0 96 34" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 24 C 22 6, 44 34, 66 18 S 84 10, 88 14" stroke-dasharray="3 4"/><path d="M80 8 L89 14 L80 20"/></svg><a class="guide-badge" href="https://www.google.com/maps/contrib/108247171494160308205/reviews" target="_blank" rel="noopener noreferrer"><span class="guide-star" aria-hidden="true">★</span><span><b>Local Guide</b> en Google Maps<small>Ver mis reseñas ↗</small></span></a></div>
  </div>
- <svg class="compass" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#e8d9bf" stroke-width="1.2">
-  <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="38" stroke-dasharray="2 4"/>
-  <path d="M50 8v8M50 84v8M8 50h8M84 50h8"/>
-  <path d="M50 20 57 50 50 80 43 50z" fill="#e0956f" stroke="none" opacity=".9"/>
-  <path d="M50 50 57 50 50 80 43 50z" fill="#e8d9bf" stroke="none"/>
-  <text x="50" y="7" font-size="7" fill="#e8d9bf" stroke="none" text-anchor="middle" font-family="monospace">N</text>
- </svg>
+ {% include sello.html id="sello-hero" clase="sello-hero" %}
 </section>
 <div class="wrap" id="ruta">
  <div class="route-head"><h2>Últimas <em>etapas</em></h2></div>
