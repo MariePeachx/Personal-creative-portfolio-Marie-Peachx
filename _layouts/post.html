@@ -16,6 +16,7 @@ layout: blog
  <div class="post-body wrap">
   {% if page.video %}<div class="post-video{% if page.video_vertical %} vertical{% endif %}"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}?rel=0" title="{{ page.title | escape }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
   {{ content }}
+  <a class="guide-box" href="https://www.google.com/maps/contrib/108247171494160308205/reviews" target="_blank" rel="noopener noreferrer"><span class="guide-star" aria-hidden="true">★</span><span><b>¿Buscas dónde comer o dormir?</b> Soy Local Guide en Google Maps. Mira mis reseñas de los sitios por los que paso ↗</span></a>
  </div>
  <nav class="post-nav wrap">
   {% if page.previous %}<a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}

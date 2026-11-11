@@ -64,6 +64,15 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .site-footer{background:var(--forest);color:#a9b0a3}.site-footer .wrap{padding:24px 0;font:.62rem var(--mono);display:flex;justify-content:space-between;gap:10px}
 .site-footer a:hover{color:var(--peach)}
 
+/* Local Guide */
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:34px}.hero-actions .scroll-hint{margin-top:0}
+.guide-badge{display:inline-flex;align-items:center;gap:12px;padding:9px 16px 9px 10px;border:1px solid #e8d9bf66;border-radius:40px;background:#141b1666;backdrop-filter:blur(6px);font-size:.85rem;color:#f3ecdf;transition:.2s}
+.guide-badge:hover{border-color:var(--peach);background:#141b16aa}
+.guide-badge small{display:block;font:.58rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--peach)}
+.guide-star{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--peach);color:var(--forest);font-size:1rem;flex:none}
+.guide-box{display:flex;align-items:center;gap:14px;margin:2.4em 0 0;padding:16px 18px;background:var(--white);border:1px dashed var(--peach);font-size:.92rem;color:#4a5048;border-bottom:1px dashed var(--peach)!important}
+.guide-box:hover{border-style:solid!important}
+
 @media(max-width:900px){.posts{grid-template-columns:1fr 1fr}.compass{width:80px;height:80px}}
 @media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px;font-size:.74rem}.compass{display:none}.blog-hero{min-height:80vh}.blog-hero .wrap{padding:120px 0 50px}.site-footer .wrap{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.compass{animation:none}.card,.card:hover{transition:none}}
