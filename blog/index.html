@@ -1,28 +1,40 @@
 ---
 layout: blog
-description: Mis viajes contados con fotos, vídeos y alguna recomendación.
+description: Diario de aventuras de Marie Peachx. Rutas, sitios que me han sorprendido y algún que otro imprevisto.
 ---
-<section class="blog-hero"><div class="wrap">
- <div class="kicker">BLOG DE VIAJES</div>
- <h1>Mis <em>viajes.</em></h1>
- <p>Me encanta viajar. Aquí voy contando los sitios que visito, con fotos, vídeos y alguna recomendación por si vas tú también.</p>
-</div></section>
-<div class="wrap">
+<section class="blog-hero" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=75')">
+ <div class="wrap">
+  <div class="kicker"><span>Diario de viaje</span><span>Rumbo: donde sea</span><span>{{ site.posts.size }} {% if site.posts.size == 1 %}etapa{% else %}etapas{% endif %}</span></div>
+  <h1>Diario de <em>aventuras.</em></h1>
+  <p>Me encanta viajar y perderme un poco por el camino. Aquí cuento las rutas, los sitios que me han sorprendido y algún que otro imprevisto.</p>
+  <a class="scroll-hint" href="#ruta">Empieza la ruta</a>
+ </div>
+ <svg class="compass" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="#e8d9bf" stroke-width="1.2">
+  <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="38" stroke-dasharray="2 4"/>
+  <path d="M50 8v8M50 84v8M8 50h8M84 50h8"/>
+  <path d="M50 20 57 50 50 80 43 50z" fill="#e0956f" stroke="none" opacity=".9"/>
+  <path d="M50 50 57 50 50 80 43 50z" fill="#e8d9bf" stroke="none"/>
+  <text x="50" y="7" font-size="7" fill="#e8d9bf" stroke="none" text-anchor="middle" font-family="monospace">N</text>
+ </svg>
+</section>
+<div class="wrap" id="ruta">
+ <div class="route-head"><h2>Últimas <em>etapas</em></h2></div>
 {% if site.posts.size > 0 %}
  <div class="posts">
  {% for post in site.posts %}
   <a class="card" href="{{ post.url }}">
-   {% if post.portada %}<div class="card-img" style="background-image:url('{{ post.portada }}')"></div>{% else %}<div class="card-img" aria-hidden="true">✈️</div>{% endif %}
+   {% if post.portada %}<div class="card-img" style="background-image:url('{{ post.portada }}')"></div>{% else %}<div class="card-img" aria-hidden="true">🧭</div>{% endif %}
+   {% if post.lugar %}<span class="stamp">📍 {{ post.lugar }}</span>{% endif %}
    <div class="card-body">
-    <span class="mono">{% if post.lugar %}{{ post.lugar }} · {% endif %}{{ post.date | date: "%d/%m/%Y" }}</span>
+    <span class="mono">{{ post.date | date: "%d/%m/%Y" }}</span>
     <h2>{{ post.title }}</h2>
     {% if post.resumen %}<p>{{ post.resumen }}</p>{% endif %}
-    <span class="more">Leer ↗</span>
+    <span class="more">Seguir la aventura →</span>
    </div>
   </a>
  {% endfor %}
  </div>
 {% else %}
- <p class="empty">Pronto habrá entradas por aquí.</p>
+ <p class="empty">La mochila está casi lista. Pronto habrá aventuras por aquí.</p>
 {% endif %}
 </div>

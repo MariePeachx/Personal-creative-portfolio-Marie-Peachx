@@ -1,0 +1,34 @@
+name: Vídeos de viaje al blog
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # cada día a las 7:00 UTC (8:00 o 9:00 en España)
+  workflow_dispatch:       # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-a-blog
+  cancel-in-progress: false
+
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar vídeos nuevos con #viajes
+        run: python3 .github/scripts/youtube_a_blog.py
+
+      - name: Publicar las entradas nuevas
+        run: |
+          if [ -n "$(git status --porcelain _posts)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _posts
+            git commit -m "Blog: nuevas entradas desde YouTube"
+            git push
+          else
+            echo "No hay vídeos de viaje nuevos."
+          fi

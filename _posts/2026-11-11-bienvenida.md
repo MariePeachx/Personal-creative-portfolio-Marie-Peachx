@@ -1,15 +1,18 @@
 ---
-title: Empiezo mi blog de viajes
-lugar: España
-resumen: Por qué abro este blog y qué vas a encontrar aquí.
+title: Empieza la aventura
+lugar: Punto de partida
+resumen: Abro mi diario de viajes. Esto es lo que vas a encontrar por aquí.
 ---
 
-Me encanta viajar, y casi siempre vuelvo con el móvil lleno de vídeos y fotos que luego se quedan ahí guardados. Así que he decidido abrir este blog para contar los sitios que visito.
+Me encanta viajar, y casi siempre vuelvo con el móvil lleno de vídeos que luego se quedan ahí guardados. Así que he decidido abrir este diario para contar cada escapada como una etapa más del camino.
 
 ## Qué vas a encontrar
 
-- Los lugares que visito, con fotos y vídeos.
-- Recomendaciones prácticas: dónde comer, qué ver y qué me saltaría.
-- Alguna curiosidad histórica, que no lo puedo evitar.
+- Rutas y escapadas, con vídeos y fotos.
+- Lo que merece la pena ver, dónde comer y lo que me saltaría.
+- Los imprevistos, que siempre son la mejor parte de la historia.
+- Alguna curiosidad histórica del lugar, que no lo puedo evitar.
 
-Si tienes alguna recomendación de viaje, [escríbeme](/#contacto).
+> La mochila ya está en la puerta.
+
+¿Conoces algún sitio que debería visitar? [Escríbeme](/#contacto).

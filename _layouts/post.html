@@ -3,20 +3,23 @@ layout: blog
 ---
 {% assign meses = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}
 {% assign m = page.date | date: "%-m" | minus: 1 %}
+{% assign fondo = page.portada | default: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=75" %}
 <article>
- <header class="post-head wrap">
-  <div class="kicker">{% if page.lugar %}{{ page.lugar }} · {% endif %}{{ page.date | date: "%-d" }} de {{ meses[m] }} de {{ page.date | date: "%Y" }}</div>
-  <h1>{{ page.title }}</h1>
-  {% if page.resumen %}<p class="lead">{{ page.resumen }}</p>{% endif %}
+ <header class="post-hero" style="background-image:url('{{ fondo }}')">
+  <div class="wrap">
+   {% if page.lugar %}<span class="stamp">📍 {{ page.lugar }}</span>{% endif %}
+   <div class="kicker">Diario de viaje · {{ page.date | date: "%-d" }} de {{ meses[m] }} de {{ page.date | date: "%Y" }}</div>
+   <h1>{{ page.title }}</h1>
+   {% if page.resumen %}<p class="lead">{{ page.resumen }}</p>{% endif %}
+  </div>
  </header>
- {% if page.portada %}<figure class="post-cover wrap"><img src="{{ page.portada }}" alt="{{ page.portada_alt | default: page.title | escape }}"></figure>{% endif %}
  <div class="post-body wrap">
-  {{ content }}
   {% if page.video %}<div class="post-video{% if page.video_vertical %} vertical{% endif %}"><iframe src="https://www.youtube-nocookie.com/embed/{{ page.video }}?rel=0" title="{{ page.title | escape }}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>{% endif %}
+  {{ content }}
  </div>
  <nav class="post-nav wrap">
   {% if page.previous %}<a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-  <a href="/blog/">Todas las entradas</a>
+  <a href="/blog/">Todas las etapas</a>
   {% if page.next %}<a href="{{ page.next.url }}">{{ page.next.title }} →</a>{% else %}<span></span>{% endif %}
  </nav>
 </article>
