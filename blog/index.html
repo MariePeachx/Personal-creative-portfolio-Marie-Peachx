@@ -1,0 +1,28 @@
+---
+layout: blog
+description: Mis viajes contados con fotos, vídeos y alguna recomendación.
+---
+<section class="blog-hero"><div class="wrap">
+ <div class="kicker">BLOG DE VIAJES</div>
+ <h1>Mis <em>viajes.</em></h1>
+ <p>Me encanta viajar. Aquí voy contando los sitios que visito, con fotos, vídeos y alguna recomendación por si vas tú también.</p>
+</div></section>
+<div class="wrap">
+{% if site.posts.size > 0 %}
+ <div class="posts">
+ {% for post in site.posts %}
+  <a class="card" href="{{ post.url }}">
+   {% if post.portada %}<div class="card-img" style="background-image:url('{{ post.portada }}')"></div>{% else %}<div class="card-img" aria-hidden="true">✈️</div>{% endif %}
+   <div class="card-body">
+    <span class="mono">{% if post.lugar %}{{ post.lugar }} · {% endif %}{{ post.date | date: "%d/%m/%Y" }}</span>
+    <h2>{{ post.title }}</h2>
+    {% if post.resumen %}<p>{{ post.resumen }}</p>{% endif %}
+    <span class="more">Leer ↗</span>
+   </div>
+  </a>
+ {% endfor %}
+ </div>
+{% else %}
+ <p class="empty">Pronto habrá entradas por aquí.</p>
+{% endif %}
+</div>

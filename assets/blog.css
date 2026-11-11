@@ -1,0 +1,45 @@
+:root{--paper:#f5f0e8;--ink:#252821;--muted:#6b6e65;--peach:#d9957d;--peach-dark:#b86f57;--line:#dcd5ca;--white:#fffdf8;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--mono:'DM Mono',monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.7}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto}
+.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+:focus-visible{outline:2px solid var(--peach-dark);outline-offset:3px}
+.site-header{position:sticky;top:0;z-index:20;background:#f5f0e8ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .wrap{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:1.2rem;font-weight:700;letter-spacing:-.06em}
+.site-header nav{display:flex;gap:22px;font-size:.8rem;color:var(--muted)}.site-header nav a:hover,.site-header nav a.active{color:var(--ink)}
+.kicker,.mono{font:.67rem var(--mono);text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic}
+
+/* Portada del blog */
+.blog-hero{padding:80px 0 50px;border-bottom:1px solid var(--line)}
+.blog-hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.95;letter-spacing:-.08em;font-weight:600;margin:18px 0}
+.blog-hero p{max-width:600px;color:#555b54;font-size:1.05rem;margin:0}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:56px 0 90px}
+.card{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}.card:hover{border-color:var(--peach);transform:translateY(-3px)}
+.card-img{aspect-ratio:4/3;background:#e4dbcf center/cover;display:grid;place-items:center;font-size:2.4rem}
+.card-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h2{font-size:1.4rem;line-height:1.15;letter-spacing:-.04em;font-weight:500;margin:0}
+.card p{font-size:.88rem;color:var(--muted);margin:0}
+.card .more{margin-top:auto;padding-top:10px;font:.62rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.empty{padding:60px 0;color:var(--muted)}
+
+/* Entrada */
+.post-head{padding:70px 0 34px;max-width:760px;margin:auto}
+.post-head h1{font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1;letter-spacing:-.07em;font-weight:600;margin:16px 0 14px}
+.post-head .lead{color:#555b54;font-size:1.1rem;margin:0}
+.post-cover{max-width:960px;margin:0 auto 40px}.post-cover img{width:100%;display:block;box-shadow:12px 14px 0 #e4dbcf}
+.post-body{max-width:700px;margin:0 auto;padding-bottom:70px;font-size:1.05rem}
+.post-body h2{font-size:1.8rem;letter-spacing:-.04em;font-weight:500;margin:2em 0 .4em}
+.post-body h3{font-size:1.25rem;font-weight:600;margin:1.6em 0 .3em}
+.post-body a{border-bottom:1px solid var(--peach)}.post-body a:hover{color:var(--peach-dark)}
+.post-body blockquote{margin:1.6em 0;padding:4px 0 4px 20px;border-left:2px solid var(--peach);font:italic 1.2rem var(--serif);color:#555b54}
+.post-body img{display:block;margin:1.6em 0}
+.post-video{position:relative;aspect-ratio:16/9;margin:1.6em 0;background:#1d211c}.post-video.vertical{aspect-ratio:9/16;max-width:340px}
+.post-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.post-nav{max-width:700px;margin:0 auto 90px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font:.66rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.post-nav a:hover{color:var(--peach-dark)}
+
+.site-footer{background:var(--ink);color:#a5a79f}.site-footer .wrap{padding:22px 0;font:.62rem var(--mono);display:flex;justify-content:space-between;gap:10px}
+.site-footer a:hover{color:var(--peach)}
+
+@media(max-width:900px){.posts{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.posts{grid-template-columns:1fr}.site-header nav{gap:14px}.blog-hero{padding:56px 0 36px}.post-head{padding-top:48px}.site-footer .wrap{flex-direction:column}}

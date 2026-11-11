@@ -111,7 +111,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
 /* Reveal */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.js .reveal.in{opacity:1;transform:none}
 
-@media(max-width:960px){.reel{grid-template-columns:repeat(2,1fr)}.services,.process{grid-template-columns:1fr 1fr}}
+@media(max-width:960px){nav{gap:14px}.reel{grid-template-columns:repeat(2,1fr)}.services,.process{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){
  .menu-btn{display:block}
  nav{position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:0;padding:6px 24px 18px;display:none;font-size:.95rem}
@@ -144,6 +144,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
   <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
   <a href="#servicios" data-i18n="nav.services">Servicios</a>
   <a href="#trayectoria" data-i18n="nav.background">Trayectoria</a>
+  <a href="/blog/" data-i18n="nav.blog">Blog de viajes</a>
   <a class="nav-cta" href="#contacto" data-i18n="nav.contact">Contacto</a>
   <button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button>
  </nav>
@@ -176,6 +177,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
   <div class="reveal"><img class="about-portrait" src="assets/marie-portrait.jpg" alt="Retrato de Marie Peachx" width="350" height="437" loading="lazy"></div>
   <div class="about-copy reveal">
    <p data-i18n="about.p1">Me gusta contar cosas con vídeo. Disfruto de todo el proceso: desde que se me ocurre la idea hasta que exporto el montaje final.</p>
+   <p data-i18n="about.travel">Y me encanta viajar. Casi siempre vuelvo con el móvil lleno de vídeos, así que he empezado un <a href="/blog/" style="border-bottom:1px solid var(--peach)">blog de viajes</a> donde cuento los sitios que visito.</p>
    <p data-i18n="about.p2">Estudié dos ciclos de grado superior del ámbito sanitario, Laboratorio Clínico y Anatomía Patológica. De ahí me viene la costumbre de documentarme bien y el interés por la ciencia y la tecnología.</p>
    <div class="note" data-i18n="about.note">Aquí encontrarás proyectos míos, colaboraciones y alguna cosa que todavía está en marcha (en ese caso lo indico).</div>
   </div>
@@ -198,7 +200,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
  <div class="projects">
   <article class="project reveal"><div class="top"><span class="mono" data-i18n="p1.cat">01 — CONTENIDO DIGITAL</span><span class="tag" data-i18n="p1.tag">CANAL PERSONAL</span></div><div><h3>Marie Peachx</h3><p data-i18n="p1.desc">Mi canal personal. Lo uso para probar formatos nuevos, hacer directos y practicar edición.</p></div><div><div class="foot">VÍDEO · EDICIÓN · DIRECTOS</div><a class="project-link" href="https://www.youtube.com/channel/UCHzE-9M0bbHYNCtyb7x10KA" target="_blank" rel="noopener noreferrer" data-i18n="p1.link">Ver canal de YouTube ↗</a></div></article>
   <article class="project reveal"><div class="top"><span class="mono" data-i18n="p2.cat">02 — DIVULGACIÓN HISTÓRICA</span><span class="tag" data-i18n="p2.tag">EN DESARROLLO</span></div><div><h3>Meritamen</h3><p data-i18n="p2.desc">Canal de vídeos cortos sobre historia: personajes, curiosidades y momentos del pasado que no suelen contarse en clase.</p></div><div><div class="foot">HISTORIA · VÍDEO CORTO</div><a class="project-link" href="https://www.youtube.com/@Meritamenhistoria/shorts" target="_blank" rel="noopener noreferrer" data-i18n="p2.link">Ver Meritamen en YouTube ↗</a></div></article>
-  <article class="project reveal"><div class="top"><span class="mono" data-i18n="p3.cat">03 — VIAJES</span><span class="tag" data-i18n="p3.tag">PROYECTO PERSONAL</span></div><div><h3>Travel Stories</h3><p data-i18n="p3.desc">Vídeos de mis viajes, montados con música y pequeños momentos del camino.</p></div><div class="foot">VIAJES · EDICIÓN</div></article>
+  <article class="project reveal"><div class="top"><span class="mono" data-i18n="p3.cat">03 — VIAJES</span><span class="tag" data-i18n="p3.tag">PROYECTO PERSONAL</span></div><div><h3>Travel Stories</h3><p data-i18n="p3.desc">Vídeos de mis viajes, montados con música y pequeños momentos del camino.</p></div><div><div class="foot">VIAJES · EDICIÓN · BLOG</div><a class="project-link" href="/blog/" data-i18n="p3.link">Leer el blog de viajes ↗</a></div></article>
   <article class="project reveal"><div class="top"><span class="mono" data-i18n="p4.cat">04 — EVENTOS Y COMUNIDAD</span><span class="tag" data-i18n="p4.tag">ORGANIZACIÓN</span></div><div><h3>Gaming Events</h3><p data-i18n="p4.desc">He organizado y coordinado eventos de videojuegos y de comunidades online.</p></div><div class="foot">EVENTOS · VIDEOJUEGOS</div></article>
   <article class="project reveal"><div class="top"><span class="mono" data-i18n="p5.cat">05 — EDUCACIÓN Y TECNOLOGÍA</span><span class="tag" data-i18n="p5.tag">PARTICIPACIÓN</span></div><div><h3>Leadingirls</h3><p data-i18n="p5.desc">Colaboré en una propuesta para acercar las profesiones digitales a estudiantes, con actividades y entrevistas relacionadas con los videojuegos.</p></div><div class="foot">EDUCACIÓN · VIDEOJUEGOS</div></article>
   <article class="project reveal"><div class="top"><span class="mono" data-i18n="p6.cat">06 — CORTOMETRAJE</span><span class="tag" data-i18n="p6.tag">PROYECTO AUDIOVISUAL</span></div><div><h3>Short Film</h3><p data-i18n="p6.desc">Participé en un cortometraje independiente: ayudé con el guion, actué y me encargué del maquillaje.</p></div><div class="foot">GUION · INTERPRETACIÓN · MAQUILLAJE</div></article>
@@ -244,7 +246,7 @@ section{padding:92px 0;border-bottom:1px solid var(--line)}
 /* ---------- Idioma ---------- */
 const EN={
  'skip':'Skip to content','menu':'MENU',
- 'nav.about':'About','nav.work':'Work','nav.projects':'Projects','nav.services':'Services','nav.background':'Background','nav.contact':'Contact',
+ 'nav.about':'About','nav.work':'Work','nav.projects':'Projects','nav.services':'Services','nav.background':'Background','nav.blog':'Travel blog','nav.contact':'Contact',
  'hero.eyebrow':'VIDEO EDITING & CONTENT',
  'hero.title':'Hi, I’m <em>Marie.</em>',
  'hero.lead':'I edit videos for YouTube and social media. I run a history channel, Meritamen, and a personal one where I try out new things. I studied science before getting into this, which is why I like researching the topics I cover.',
@@ -252,6 +254,7 @@ const EN={
  'stat.views':'views on Meritamen','stat.channels':'YouTube channels','stat.langs':'working languages',
  'about.kicker':'01 / ABOUT ME','about.title':'A bit <em>about me.</em>',
  'about.p1':'I like telling things through video. I enjoy the whole process, from the moment I get an idea to exporting the final edit.',
+ 'about.travel':'And I love travelling. I usually come back with my phone full of videos, so I’ve started a <a href="/blog/" style="border-bottom:1px solid var(--peach)">travel blog</a> where I write about the places I visit.',
  'about.p2':'I studied two higher vocational courses in healthcare: Clinical Laboratory and Pathological Anatomy. That’s where my habit of researching properly comes from, along with my interest in science and technology.',
  'about.note':'Here you’ll find my own projects, collaborations, and a few things still in progress (I say so when that’s the case).',
  'work.kicker':'02 / VIDEOS','work.title':'Some <em>shorts.</em>',
@@ -260,7 +263,7 @@ const EN={
  'proj.kicker':'03 / PROJECTS','proj.title':'What I’ve <em>worked on.</em>',
  'p1.cat':'01 — DIGITAL CONTENT','p1.tag':'PERSONAL CHANNEL','p1.desc':'My personal channel. I use it to try new formats, stream, and practise editing.','p1.link':'Watch on YouTube ↗',
  'p2.cat':'02 — HISTORY','p2.tag':'IN DEVELOPMENT','p2.desc':'A channel of short history videos: people, trivia, and moments from the past you don’t usually hear about at school.','p2.link':'Watch Meritamen on YouTube ↗',
- 'p3.cat':'03 — TRAVEL','p3.tag':'PERSONAL PROJECT','p3.desc':'Videos of my trips, edited with music and small moments along the way.',
+ 'p3.cat':'03 — TRAVEL','p3.tag':'PERSONAL PROJECT','p3.desc':'Videos of my trips, edited with music and small moments along the way.','p3.link':'Read the travel blog ↗',
  'p4.cat':'04 — EVENTS & COMMUNITY','p4.tag':'ORGANISATION','p4.desc':'I’ve organised and coordinated gaming events and online community events.',
  'p5.cat':'05 — EDUCATION & TECH','p5.tag':'PARTICIPATION','p5.desc':'I helped with a project introducing students to digital careers, with activities and interviews related to video games.',
  'p6.cat':'06 — SHORT FILM','p6.tag':'AUDIOVISUAL PROJECT','p6.desc':'I took part in an independent short film: I helped with the script, acted, and did the makeup.',

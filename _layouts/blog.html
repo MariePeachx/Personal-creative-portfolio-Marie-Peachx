@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.layout == 'post' %}{{ page.title }} · {% endif %}Blog de viajes · Marie Peachx</title>
+<meta name="description" content="{{ page.resumen | default: page.description | default: site.description | strip_html | escape }}">
+<meta name="theme-color" content="#f5f0e8">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.layout == 'post' %}{{ page.title | escape }}{% else %}Blog de viajes · Marie Peachx{% endif %}">
+<meta property="og:description" content="{{ page.resumen | default: site.description | strip_html | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+{% if page.portada %}<meta property="og:image" content="{{ page.portada | absolute_url }}">{% endif %}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦋</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/blog.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+ <a class="brand" href="/">Marie Peachx</a>
+ <nav aria-label="Principal"><a href="/">Inicio</a><a href="/blog/" class="active">Blog de viajes</a><a href="/#contacto">Contacto</a></nav>
+</div></header>
+<main>
+{{ content }}
+</main>
+<footer class="site-footer"><div class="wrap"><span>© {{ site.time | date: '%Y' }} MARIE PEACHX</span><a href="/">VOLVER AL PORTFOLIO ↗</a></div></footer>
+</body>
+</html>
