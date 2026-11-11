@@ -14,7 +14,7 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .blog-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#f3ecdf;background:var(--forest) center 40%/cover;overflow:hidden}
 .blog-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#141b16cc 0%,#141b1633 35%,#141b16e6 100%)}
 .blog-hero .wrap{position:relative;padding:140px 0 70px}
-.blog-hero .kicker{color:#e8d9bf;display:flex;gap:18px;flex-wrap:wrap}
+.blog-hero .frase{font:italic 1.35rem var(--serif);color:#e8d9bf;margin:0;max-width:none}
 .blog-hero h1{font-size:clamp(3.4rem,9vw,8rem);line-height:.9;letter-spacing:-.08em;font-weight:600;margin:20px 0 22px;max-width:900px}
 .blog-hero p{max-width:560px;font-size:1.12rem;margin:0;color:#ede4d3}
 .compass{position:absolute;right:max(24px,calc((100% - 1120px)/2));bottom:70px;width:120px;height:120px;opacity:.8;animation:spin 60s linear infinite}
