@@ -17,7 +17,7 @@ description: Diario de aventuras de Marie Peachx. Rutas, sitios que me han sorpr
  <div class="route-head"><h2>Últimas <em>etapas</em></h2></div>
 {% if viajes.size > 0 %}
  <div class="posts">
- {% for post in viajes %}{% include tarjeta.html post=post %}{% endfor %}
+ {% for post in viajes %}{% assign n = viajes.size | minus: forloop.index0 %}{% include tarjeta.html post=post numero=n %}{% endfor %}
  </div>
 {% else %}
  <p class="empty">La mochila está casi lista. Pronto habrá aventuras por aquí.</p>
@@ -28,7 +28,7 @@ description: Diario de aventuras de Marie Peachx. Rutas, sitios que me han sorpr
  <div class="route-head"><h2>Curiosidades <em>del mundo</em></h2></div>
  <p class="curios-intro">Cada pocos días, un país o un dato curioso sobre algún rincón del planeta. Sitios en los que todavía no he estado, pero que ya tengo apuntados.</p>
  <div class="posts curios">
- {% for post in curiosidades limit: 3 %}{% include tarjeta.html post=post %}{% endfor %}
+ {% for post in curiosidades limit: 3 %}{% assign n = curiosidades.size | minus: forloop.index0 %}{% include tarjeta.html post=post numero=n %}{% endfor %}
  </div>
  <a class="ver-todas" href="/blog/curiosidades/">Ver todas las curiosidades →</a>
 </div></section>

@@ -2,7 +2,7 @@
    {% if include.post.portada %}<div class="card-img" style="background-image:url('{{ include.post.portada }}')"></div>{% else %}<div class="card-img" aria-hidden="true">{% if include.post.categoria == 'curiosidades' %}🌍{% else %}🧭{% endif %}</div>{% endif %}
    {% if include.post.lugar %}<span class="stamp">📍 {{ include.post.lugar }}</span>{% endif %}
    <div class="card-body">
-    <span class="mono">{{ include.post.date | date: "%d/%m/%Y" }}</span>
+    <span class="mono"><b class="num">{% if include.post.categoria == 'curiosidades' %}Nº{% else %}ETAPA{% endif %} {% if include.numero < 10 %}0{% endif %}{{ include.numero }} ·</b> {{ include.post.date | date: "%d/%m/%Y" }}</span>
     <h2>{{ include.post.title }}</h2>
     {% if include.post.resumen %}<p>{{ include.post.resumen }}</p>{% endif %}
     <span class="more">{% if include.post.categoria == 'curiosidades' %}Descubrir →{% else %}Seguir la aventura →{% endif %}</span>

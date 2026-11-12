@@ -34,7 +34,7 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .stamp{position:absolute;top:22px;right:20px;transform:rotate(6deg);border:2px solid var(--peach);color:var(--peach);background:#fbf7efe6;font:600 .58rem var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:3px;max-width:70%}
 .card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card .mono{color:var(--muted)}
-.card .mono::before{content:"ETAPA " counter(etapa,decimal-leading-zero) " · ";color:var(--peach-dark)}
+.card .mono .num{font-weight:400;color:var(--peach-dark)}
 .card h2{font-size:1.5rem;line-height:1.12;letter-spacing:-.045em;font-weight:500;margin:0}
 .card p{font-size:.9rem;color:var(--muted);margin:0}
 .card .more{margin-top:auto;padding-top:10px;font:.64rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--peach-dark)}
@@ -98,7 +98,6 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 .curios-teaser{background:#e9e0cf99;border-top:1px solid var(--line);padding-bottom:30px}
 .curios-intro{max-width:620px;color:var(--muted);margin:18px 0 0}
 .posts.curios{padding-top:30px;padding-bottom:40px}
-.posts.curios .card .mono::before{content:"Nº " counter(etapa,decimal-leading-zero) " · "}
 .posts.curios .stamp{border-color:#3f7fd0;color:#2f6fbf}
 .ver-todas{display:inline-block;margin-bottom:70px;font:.66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--peach-dark);border-bottom:1px dashed var(--peach)}
 .curios-hero{min-height:70vh}

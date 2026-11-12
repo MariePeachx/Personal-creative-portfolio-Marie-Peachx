@@ -16,7 +16,7 @@ description: Curiosidades del mundo. Cada pocos días, un país o un dato curios
  <div class="route-head"><h2>{{ curiosidades.size }} {% if curiosidades.size == 1 %}<em>curiosidad</em>{% else %}<em>curiosidades</em>{% endif %}</h2></div>
 {% if curiosidades.size > 0 %}
  <div class="posts curios">
- {% for post in curiosidades %}{% include tarjeta.html post=post %}{% endfor %}
+ {% for post in curiosidades %}{% assign n = curiosidades.size | minus: forloop.index0 %}{% include tarjeta.html post=post numero=n %}{% endfor %}
  </div>
 {% else %}
  <p class="empty">La primera curiosidad está en camino.</p>
