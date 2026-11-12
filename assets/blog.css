@@ -88,6 +88,7 @@ em{font-family:var(--serif);font-weight:500;color:var(--peach);font-style:italic
 /* Fotos dentro de las entradas */
 .post-body .foto{margin:2em -40px}
 .post-body .foto img{margin:0;width:100%}
+.post-body .foto.vertical{max-width:520px;margin-left:auto;margin-right:auto}
 .post-body figcaption{font-size:.88rem;color:#4a5048;margin-top:10px;padding:0 10px}
 .post-body figcaption small,.post-body .creditos{display:block;font:.6rem var(--mono);letter-spacing:.06em;color:var(--muted);margin-top:4px}
 .post-body figcaption a,.post-body .creditos a{border-bottom:0;text-decoration:underline;text-decoration-color:var(--line)}
